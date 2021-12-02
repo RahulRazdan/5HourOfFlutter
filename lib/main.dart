@@ -28,16 +28,12 @@ class Home extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.deepOrange[500],
         ),
-        body: Center(child: Column(
-          children: [
-            Image(image: AssetImage('assets/space.jpg')),
-            Icon(Icons.airport_shuttle),
-            Icon(CupertinoIcons.book,size: 50),
-            IconButton(onPressed: (){}, icon: const Icon(CupertinoIcons.mail)),
-            ElevatedButton(onPressed: (){}, child: const Text('Click Me')),
-            TextButton(onPressed:  (){}, child: const Text('Click Me'),style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.amber)))
-          ],
-        )),
+        body: Container(
+          color: Colors.grey[400],
+          child: const Text('hello'),
+          padding: EdgeInsets.only(left:20.0),
+          margin: EdgeInsets.all(20.0)
+        ),
         floatingActionButton: FloatingActionButton(
           child: const Text('+'),
           onPressed: (){},
