@@ -2,13 +2,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: NinjaCard()
   ));
 }
 
-class NinjaCard extends StatelessWidget {
+class NinjaCard extends StatefulWidget {
   const NinjaCard({Key? key}) : super(key: key);
+
+  @override
+  State<NinjaCard> createState() => _NinjaCardState();
+}
+
+class _NinjaCardState extends State<NinjaCard> {
+
+  int ninjaLevel = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +28,13 @@ class NinjaCard extends StatelessWidget {
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
       ),
+      floatingActionButton:
+        FloatingActionButton(onPressed: (){
+      setState(() {
+        ninjaLevel +=1;
+      });
+    }, child: const Icon(CupertinoIcons.add),
+    backgroundColor: Colors.grey[800]),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
         child: Column(
@@ -47,12 +62,12 @@ class NinjaCard extends StatelessWidget {
               fontWeight: FontWeight.bold
             )),
             const SizedBox(height: 30.0),
-            Text('CURRENT NINJA LEVEL',style: TextStyle(
+            const Text('CURRENT NINJA LEVEL',style: TextStyle(
                 color:Colors.grey,
                 letterSpacing: 2.0
             )),
             const SizedBox(height: 10.0),
-            Text('10',style: TextStyle(
+            Text('$ninjaLevel',style: TextStyle(
                 color:Colors.amberAccent[200],
                 letterSpacing: 2.0,
                 fontSize: 28.0,
@@ -69,7 +84,8 @@ class NinjaCard extends StatelessWidget {
                   letterSpacing: 1.0
                 ),)
               ],
-            )
+            ),
+            const SizedBox(height: 30.0)
           ],
         ),
       ),
