@@ -28,32 +28,37 @@ class Home extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.deepOrange[500],
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Row(
-              children: const [
-                Text('hello'),
-                Text('world')
+        body:Row(
+              children: [
+                Expanded(
+                    flex:3,
+                    child: Image.asset('assets/space.jpg')
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Container(
+                    padding: const EdgeInsets.all(30.0),
+                    color:Colors.cyan,
+                    child: const Text('1')
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    padding: const EdgeInsets.all(30.0),
+                    color:Colors.pinkAccent,
+                    child: const Text('2')
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    padding: const EdgeInsets.all(30.0),
+                    color:Colors.amber,
+                    child: const Text('3')
+                  ),
+                )
               ],
-            ),
-            Container(
-                child: const Text('one'),
-                color:Colors.amber,
-                padding: const EdgeInsets.all(20.0)
-            ),
-            Container(
-                child: const Text('two'),
-                color:Colors.pinkAccent,
-                padding: const EdgeInsets.all(30.0)
-            ),
-            Container(
-                child: const Text('three'),
-                color:Colors.cyan,
-                padding: const EdgeInsets.all(40.0)
-            )
-          ],
         ),
         floatingActionButton: FloatingActionButton(
           child: const Text('+'),
