@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -27,7 +28,16 @@ class Home extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.deepOrange[500],
         ),
-        body: const Center(child: Image(image: NetworkImage('https://images.unsplash.com/photo-1595856984276-8f6d5e979f4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80'))),
+        body: Center(child: Column(
+          children: [
+            Image(image: AssetImage('assets/space.jpg')),
+            Icon(Icons.airport_shuttle),
+            Icon(CupertinoIcons.book,size: 50),
+            IconButton(onPressed: (){}, icon: const Icon(CupertinoIcons.mail)),
+            ElevatedButton(onPressed: (){}, child: const Text('Click Me')),
+            TextButton(onPressed:  (){}, child: const Text('Click Me'),style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.amber)))
+          ],
+        )),
         floatingActionButton: FloatingActionButton(
           child: const Text('+'),
           onPressed: (){},
